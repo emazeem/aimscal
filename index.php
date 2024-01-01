@@ -28,35 +28,7 @@
   </div>
 </div>
 <!-- ***** Preloader End ***** -->
-
-<!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="main-nav">
-          <a href="index.html" class="logo">
-            <img src="assets/images/AIMS.png" style="width: 50px"  alt="">
-          </a>
-          <ul class="nav">
-            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-            <li class="scroll-to-section"><a href="#services">Services</a></li>
-            <li class="scroll-to-section"><a href="#courses">Request a Quote</a></li>
-            <li class="scroll-to-section"><a href="#team">Team</a></li>
-            <li class="scroll-to-section"><a href="#events">About Us</a></li>
-            <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
-          </ul>
-          <a class="menu-trigger">
-            <span>Menu</span>
-          </a>
-          <!-- ***** Menu End ***** -->
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- ***** Header Area End ***** -->
-
+<?php  include 'includes/header.php' ?>
 <div class="main-banner" id="top">
   <div class="container">
     <div class="row">
@@ -679,7 +651,7 @@
 <footer>
   <div class="container">
     <div class="col-lg-12">
-      <p>Copyright © 2036 Scholar Organization. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
+      <p>Copyright © <?php echo date('Y')?> aimscal.com</a></p>
     </div>
   </div>
 </footer>
