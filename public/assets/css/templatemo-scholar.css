@@ -675,15 +675,18 @@ Banner Style
 }
 
 .main-banner .item-1 {
-  background-image: url(../images/banner-item-01.jpg);
+  background:linear-gradient(0deg, rgba(73, 133, 194, 0.84), rgba(66, 66, 66, 0.5) ), url(../../images/LAB.jpg);
+
 }
 
 .main-banner .item-2 {
-  background-image: url(../images/banner-item-02.jpg);
+  background:linear-gradient(0deg, rgba(73, 133, 194, 0.84), rgba(66, 66, 66, 0.5) ), url(../../images/LAB2.jpg);
+
 }
 
 .main-banner .item-3 {
-  background-image: url(../images/banner-item-03.jpg);
+  background:linear-gradient(0deg, rgba(73, 133, 194, 0.84), rgba(66, 66, 66, 0.5) ), url(../../images/LAB3.jpg);
+
 }
 
 .main-banner .item {
@@ -692,7 +695,7 @@ Banner Style
   background-size: cover;
   border-radius: 25px;
   padding: 100px 100px;
-  margin-left: 130px;
+  margin-left: 80px;
 }
 
 .main-banner .item span.category {
@@ -731,8 +734,8 @@ Banner Style
 
 .main-banner .item .buttons .main-button a {
   font-size: 14px;
-  color: #3ca2ec;
-  background-color: #fff;
+  color: white;
+  background-color: #a7d045;
   display: inline-block;
   height: 50px;
   line-height: 50px;
@@ -1157,13 +1160,16 @@ Team Style
 }
 
 .team-member img {
-  max-width: 220px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   position: absolute;
   top: -110px;
   left: 50%;
   transform: translateX(-110px);
   transition: all .3s;
+  object-fit: cover;
+  border: 5px solid #a7d045;
 }
 
 .team-member .main-content {
@@ -1905,4 +1911,17 @@ body {
   .fun-facts:before {
     width: 95%;
   }
+}
+.dropdown-menu{
+  background: #02a0fa !important;
+  border: none;
+  padding: 0!important;
+}
+.dropdown-item:hover{
+  background: #99d3f6 !important;
+  border-radius: 0!important;
+}
+.rotate-up {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease; /* Add animation transition */
 }
