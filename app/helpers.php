@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 function getServices()
 {
     return [
@@ -13,4 +15,23 @@ function getServices()
         array('title'=>'Storage Tanks Calibration Services','description'=>'Accredited and Traceable to ensure measurement comparability.','icon'=>'tank.png'),
         array('title'=>'Cathodic Protection System Installation and Servicing','description'=>'Increase service life of you buried assets.','icon'=>'electrolysis.png'),
     ];
+}
+
+function ourTeam()
+{
+    return [
+        array('name'=>'Imtiaz Ahmed','image'=>'CEO.jpeg','designation'=>'Chief Executive Officer'),
+        array('name'=>'Shahzad Ahmed','image'=>'GM.jpeg','designation'=>'General Manager'),
+        array('name'=>'Riaz Ahmed','image'=>'TM.jpeg','designation'=>'Technical Manager'),
+    ];
+}
+
+function galleryImages()
+{
+    $files =File::files('gallery');
+    $images=[];
+    foreach ($files as $file){
+        $images[]='gallery/'.$file->getFilename();
+    }
+    return $images;
 }

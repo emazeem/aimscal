@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('assets/css/owl.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/animate.css')}}" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
 </head>
 <body>
 <div id="js-preloader" class="js-preloader">
@@ -34,15 +35,17 @@
 <script src="{{url('assets/js/owl-carousel.js')}}"></script>
 <script src="{{url('assets/js/counter.js')}}"></script>
 <script src="{{url('assets/js/custom.js')}}"></script>
+
 <script>
     $(function (){
         $(document).on('click','#servicesDropdown',function (){
             var dropdownMenu=$(this).parent().find('.dropdown-menu');
             dropdownMenu.slideToggle();
             $(this).find('.fa-angle-down').toggleClass('rotate-up');
-
         })
     });
 </script>
+
+@stack('scripts')
 </body>
 </html>

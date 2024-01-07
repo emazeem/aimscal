@@ -160,7 +160,7 @@ body {
 
 .main-button a {
   display: inline-block;
-  background-color: #fff;
+  background-color: #a7d045;
   color: #3ca2ec;
   font-size: 14px;
   font-weight: 500;
@@ -1353,8 +1353,6 @@ Events Style
 }
 
 .events .item ul li {
-  display: inline-block;
-  width: 17.5%;
   vertical-align: middle;
 }
 
@@ -1453,7 +1451,12 @@ Contact Style
   margin-top: 50px;
   background-color: #fff;
   border-radius: 25px;
-  padding: 30px 120px;
+
+  padding-left: 100px;
+  padding-right: 20px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+
   display: inline-block;
   position: relative;
 }
@@ -1463,11 +1466,11 @@ Contact Style
   left: 0;
   top: 0;
   background-color: #3ca2ec;
-  width: 80px;
+  width: 110px;
   padding: 30px 8px;
   line-height: 25px;
-  height: 120px;
-  border-radius: 15px 60px 60px 15px; 
+  height: 100%;
+  border-radius: 15px 95px 95px 15px;
   display: inline-block;
   text-align: center;
   color: #fff;
@@ -1485,9 +1488,10 @@ Contact Style
 .contact-us .special-offer h6 {
   font-size: 15px;
   color: #4a4a4a;
-  text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 15px;
+  margin-left: 30px;
+  text-transform: none!important;
 }
 
 .contact-us .special-offer h6 em {
@@ -1847,6 +1851,7 @@ body {
   }
   .events .item ul {
     margin-top: -40px;
+    list-style: circle;
   }
   .events .item ul li:first-child {
     width: 100% !important;
@@ -1924,4 +1929,8 @@ body {
 .rotate-up {
   transform: rotate(-180deg);
   transition: transform 0.3s ease; /* Add animation transition */
+}
+.m-ul li{
+  list-style: disc!important;
+  margin-left: 20px;
 }

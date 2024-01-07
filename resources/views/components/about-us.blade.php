@@ -6,51 +6,53 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Where shall we begin?
+                                WHAT WE AIM?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                To facilitate trade and industry by providing QMS and metrology related training, consultancy and calibration services as per latest international standards and guidelines.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                How do we work together?
+                                WHAT IS OUR VISION?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                Scientific and technological advancement of a country demands an organized and globally connected metrology infrastructure. Scientific and legal metrology systems are normally taken care by public sector organizations like National Metrology Institutes and relevant ministries.
+                                <br>However, industrial metrology systems are dependent on traceable calibration services provided by private sector calibration laboratories.
+                                <br>In developing countries inadequate level of metrology education / awareness and incomplete traceability of measurement results bars the local production from highly competitive global market.
+                                <br>Calibration results accredited to ISO/IEC 17025: 2005 from ILAC MRA signatories like PNAC, GAC or DAC are like passports for locally produced goods and services to transit across the globe.
+                                <br>AIMS cherish a vision of providing complete traceability and assurance of measurement results to the BIPM through recognized NMI like NPL (UK), NIST (USA) and PTB (Germany) in compliance with the requirements of ISO/IEC 17025: 2005.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Why SCHOLAR is the best?
+                                WHAT WE OFFER?
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.</div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Do we get the best support?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+
+                                AIMS laboratory is fully complying the requirement of ISO/IEC 17025: 2005 and have applied for accreditation from Pakistan National Accreditation Council.
+                                <ul class="m-ul">
+                                    <li >Pressure Measurement</li>
+                                    <li >Temperature and Humidity Measurement</li>
+                                    <li >Electrical Time and Frequency</li>
+                                    <li >Mass, Volume Force and Torque Measurement</li>
+                                    <li >Dimensional Measurement</li>
+                                    <li >Miscellaneous i.e, pH, conductivity and turbidity meters Viscosity and Gravity Meters.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="col-lg-5 align-self-center">

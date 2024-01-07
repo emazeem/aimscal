@@ -9,20 +9,23 @@ class HomeController extends Controller
     //
     public function contactUs(){
         return view('contact-us');
-
+    }
+    public function aboutUs(){
+        return view('about-us');
+    }
+    public function ourTeam(){
+        $teams=ourTeam();
+        return view('team',compact('teams'));
     }
     public function index(){
         $services=getServices();
-        $teams=[
-            array('name'=>'Imtiaz Ahmed','image'=>'CEO.jpeg','designation'=>'Chief Executive Officer'),
-            array('name'=>'Shahzad Ahmed','image'=>'shahzad.png','designation'=>'Technical Manager'),
-            array('name'=>'Riaz Ahmed','image'=>'TM.jpeg','designation'=>'Technical Manager'),
-        ];
+        $teams=ourTeam();
+        $gallery=galleryImages();
         $banners=[
             array('title'=>''),
             array('title'=>''),
             array('title'=>''),
         ];
-        return view('welcome',compact('services','teams','banners'));
+        return view('welcome',compact('services','teams','banners','gallery'));
     }
 }

@@ -16,10 +16,10 @@
                                 @endforeach
                             </div>
                         </li>
-                        <li class="scroll-to-section"><a class="{{Route::currentRouteName()==''?'active':''}}" href="#courses">Request a Quote</a></li>
-                        <li class="scroll-to-section"><a class="{{Route::currentRouteName()==''?'active':''}}" href="#team">Team</a></li>
-                        <li class="scroll-to-section"><a class="{{Route::currentRouteName()==''?'active':''}}" href="#events">About Us</a></li>
+                        <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='our.team'?'active':''}}" href="{{url('our-team')}}">Team</a></li>
+                        <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='about.us'?'active':''}}" href="{{url('about-us')}}">About Us</a></li>
                         <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='contact.us'?'active':''}}" href="{{url('contact-us')}}">Contact Us</a></li>
+                        <li class="scroll-to-section main-button"><a class="{{Route::currentRouteName()==''?'active':''}} " href="#">Request a Quote</a></li>
                     </ul>
                     <a class="menu-trigger">
                         <span>Menu</span>

@@ -7,7 +7,13 @@
                         <div class="item item-{{$k+1}}">
                             <div class="header-text">
                                 <span class="category">Your Partner in Growth.</span>
-                                <h2>One stop shop for industrial inspection, testing & calibration services.</h2>
+                                <h2>
+                                    @if($k==0)
+                                        Al-Meezan Industrial Meterology Services
+                                    @else
+                                        One stop shop for industrial inspection, testing & calibration services.
+                                    @endif
+                                </h2>
                                 <p>Growth partner for trade and industry for proactive management of their equipment, fine tuning of their process and quality assurance of their products through traceable and reliable services of inspections, testing and calibrations. </p>
                                 <div class="buttons">
                                     <div class="main-button">
