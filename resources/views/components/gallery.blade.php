@@ -127,7 +127,7 @@
     .gallery-wrapper .content .gallery.full .swiper-container .swiper-wrapper .swiper-slide .overlay {
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: 50px;
         z-index: 2;
         width: 100%;
         height: auto;

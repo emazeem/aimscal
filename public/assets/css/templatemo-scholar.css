@@ -157,11 +157,17 @@ body {
   text-transform: uppercase;
   font-weight: 600;
 }
+.bg-c-primary{
+  background: #a7d045;
+}
+.text-c-primary{
+  color: #a7d045!important;
+}
 
 .main-button a {
   display: inline-block;
   background-color: #a7d045;
-  color: #3ca2ec;
+  color: white;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -172,7 +178,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #3ca2ec;
+  background-color: #96c71f;
   color: #fff;
 }
 
@@ -396,11 +402,8 @@ Header Style
   display: block;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 20px;
   font-weight: 300;
   font-size: 14px;
-  height: 40px;
-  line-height: 40px;
   text-transform: capitalize;
   color: #fff;
   -webkit-transition: all 0.4s ease 0s;
@@ -1357,7 +1360,7 @@ Events Style
 }
 
 .events .item ul li:first-child {
-  width: 35%;
+/*  width: 35%;*/
 }
 
 .events .item ul li:nth-of-type(2) {
@@ -1924,7 +1927,6 @@ body {
 }
 .dropdown-item:hover{
   background: #99d3f6 !important;
-  border-radius: 0!important;
 }
 .rotate-up {
   transform: rotate(-180deg);

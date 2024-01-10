@@ -17,6 +17,13 @@ class HomeController extends Controller
         $teams=ourTeam();
         return view('team',compact('teams'));
     }
+    public function service(Request $request){
+        if ($request->type=='calibration-services'){
+            return view('services.calibration');
+        }
+        abort('404');
+    }
+
     public function index(){
         $services=getServices();
         $teams=ourTeam();

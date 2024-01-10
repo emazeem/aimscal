@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="image">
-                                    <img src="assets/images/event-01.jpg" alt="" />
+                                    <img src="{{url('images/about-us.jpeg')}}" alt="" />
                                 </div>
                             </div>
                             <div class="col-lg-9">
@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="image">
-                                    <img src="assets/images/event-01.jpg" alt="" />
+                                    <img src="{{url('images/LAB.jpg')}}" alt="" />
                                 </div>
                             </div>
                             <div class="col-lg-9">
@@ -82,7 +82,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="image">
-                                    <img src="assets/images/event-01.jpg" alt="" />
+                                    <img src="{{url('images/LAB2.jpg')}}" alt="" />
                                 </div>
                             </div>
                             <div class="col-lg-9">

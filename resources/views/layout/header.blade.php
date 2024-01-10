@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Str; ?>
 <header class="header-area header-sticky">
     <div class="container">
         <div class="row">
@@ -12,7 +13,7 @@
                             <a class="{{Route::currentRouteName()==''?'active':''}} " href="#" id="servicesDropdown" >Services <i class="fa fa-angle-down" style="font-size: 10px"></i></a>
                             <div class="dropdown-menu" aria-labelledby="servicesDropdown">
                                 @foreach(getServices() as $service)
-                                    <a class="dropdown-item" href="#">{{$service['title']}}</a>
+                                    <a class="dropdown-item" href="{{route('service',['type'=>Str::slug($service['title'])])}}">{{$service['title']}}</a>
                                 @endforeach
                             </div>
                         </li>

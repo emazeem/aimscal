@@ -13,22 +13,20 @@
             <div class="col-md-12 text-center">
                 <h6>AIMS Credentials</h6>
                 <h6>Accreditation and Certifications</h6>
-                <div class="col d-flex justify-content-center mt-4">
-                    <h6 style="font-weight: normal" class="badge  bg-white text-dark rounded mx-2">ISO 9001: 2015</h6>
-                    <h6 style="font-weight: normal" class="badge  bg-white text-dark rounded mx-2">ISO 14001: 2015</h6>
-                    <h6 style="font-weight: normal" class="badge  bg-white text-dark rounded mx-2">OHSAS 18001: 2007</h6>
-                    <h6 style="font-weight: normal" class="badge  bg-white text-dark rounded mx-2">ISO 17020: 2012</h6>
-                    <h6 style="font-weight: normal" class="badge  bg-white text-dark rounded mx-2">ISO/IEC 17025: 2005</h6>
+                <div class="col d-flex justify-content-center mt-3">
+                    <h6 style="font-weight: normal" class="badge p-2 bg-c-primary text-dark rounded mx-2">ISO 9001: 2015</h6>
+                    <h6 style="font-weight: normal" class="badge p-2 bg-c-primary text-dark rounded mx-2">ISO 14001: 2015</h6>
+                    <h6 style="font-weight: normal" class="badge p-2 bg-c-primary text-dark rounded mx-2">OHSAS 18001: 2007</h6>
+                    <h6 style="font-weight: normal" class="badge p-2 bg-c-primary text-dark rounded mx-2">ISO 17020: 2012</h6>
+                    <h6 style="font-weight: normal" class="badge p-2 bg-c-primary text-dark rounded mx-2">ISO/IEC 17025: 2005</h6>
                 </div>
-
-
             </div>
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-12 d-flex justify-content-center border-top border-bottom py-3">
+                <a style="color: white;font-weight: bold;padding-left: 10px;padding-right: 10px" href="{{url('about-us')}}">About us</a>
                 <a style="color: white;font-weight: bold;padding-left: 10px;padding-right: 10px" href="">Privacy Policy</a>
                 <a style="color: white;font-weight: bold;padding-left: 10px;padding-right: 10px" href="">Terms & Conditions</a>
-                <a style="color: white;font-weight: bold;padding-left: 10px;padding-right: 10px" href="{{url('about-us')}}">About us</a>
                 <a style="color: white;font-weight: bold;padding-left: 10px;padding-right: 10px" href="{{url('contact-us')}}">Contact us</a>
             </div>
         </div>
