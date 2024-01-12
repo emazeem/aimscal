@@ -20,7 +20,7 @@
                         <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='our.team'?'active':''}}" href="{{url('our-team')}}">Team</a></li>
                         <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='about.us'?'active':''}}" href="{{url('about-us')}}">About Us</a></li>
                         <li class="scroll-to-section"><a class="{{Route::currentRouteName()=='contact.us'?'active':''}}" href="{{url('contact-us')}}">Contact Us</a></li>
-                        <li class="scroll-to-section main-button"><a class="{{Route::currentRouteName()==''?'active':''}} " href="#">Request a Quote</a></li>
+                        <li class="scroll-to-section main-button"><a class="{{Route::currentRouteName()==''?'active':''}} " href="{{route('generate.rfq')}}">Request a Quote</a></li>
                     </ul>
                     <a class="menu-trigger">
                         <span>Menu</span>

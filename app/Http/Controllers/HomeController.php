@@ -17,6 +17,10 @@ class HomeController extends Controller
         $teams=ourTeam();
         return view('team',compact('teams'));
     }
+    public function generateRFQ(){
+        return view('generate-requests');
+    }
+
     public function service(Request $request){
         if ($request->type=='calibration-services'){
             return view('services.calibration');
