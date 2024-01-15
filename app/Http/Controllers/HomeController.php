@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -39,4 +40,22 @@ class HomeController extends Controller
         ];
         return view('welcome',compact('services','teams','banners','gallery'));
     }
+    public function sendEmail(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+        $subject=$request->subject;
+        $message=$request->message;
+        $to = 'emazeem07@gmail.com';
+        $from=$request->email;
+        Mail::html($message, function ($message) use ($subject, $to, $from) {
+            $message->subject($subject)->to($to)->from($from);
+        });
+        return response()->json(['success' => 'Email sent successfully']);
+    }
+
 }

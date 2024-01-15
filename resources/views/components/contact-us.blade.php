@@ -21,17 +21,25 @@
             <div class="col-lg-6">
                 <div class="contact-us-content">
                     <form id="contact-form" action="" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <fieldset>
                                     <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required />
                                 </fieldset>
                             </div>
+
                             <div class="col-lg-12">
                                 <fieldset>
                                     <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="" />
                                 </fieldset>
                             </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" name="subject" id="subject" placeholder="Subject..." autocomplete="on" required />
+                                </fieldset>
+                            </div>
+
                             <div class="col-lg-12">
                                 <fieldset>
                                     <textarea name="message" id="message" placeholder="Your Message"></textarea>
@@ -49,31 +57,31 @@
         </div>
     </div>
 </div>
-<script>
-    $(function () {
-        $('#contact-form').on('submit',function (e) {
-            e.preventDefault();
-            var button = $('#send-message');
-            var previous = $(button).html();
-            button.attr('disabled', 'disabled').html('Processing... Please wait <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
-            $.ajax({
-                url: "{{route('contact.send.mail')}}",
-                type: "POST",
-                data:  new FormData(this),
-                contentType: false,
-                cache: false,
-                processData:false,
-                success: function(data)
-                {
-                    button.attr('disabled', null).html(previous);
-                    swal('success',data.success,'success').then((value) => {});
-                },
-                error: function(xhr)
-                {
-                    button.attr('disabled', null).html(previous);
-                    erroralert(xhr);
-                }
+@push('scripts')
+    <script>
+        $(function () {
+            $('#contact-form').on('submit',function (e) {
+                e.preventDefault();
+                var button = $('#send-message');
+                var previous = $(button).html();
+                button.attr('disabled', 'disabled').html('Processing... Please wait <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+                $.ajax({
+                    url: "{{route('contact.send.mail')}}",
+                    type: "POST",
+                    data:  new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    success: function(data) {
+                        button.attr('disabled', null).html(previous);
+                        swal('success',data.success,'success').then((value) => {});
+                    },
+                    error: function(xhr) {
+                        button.attr('disabled', null).html(previous);
+                        erroralert(xhr);
+                    }
+                });
             });
-        });
-    })
-</script>
+        })
+    </script>
+@endpush

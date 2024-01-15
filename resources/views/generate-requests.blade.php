@@ -163,6 +163,7 @@
                         $('#parameter').select2();
                     },
                     error: function(xhr) {
+                        erroralert(xhr);
                     }
                 });
             }
@@ -183,10 +184,10 @@
                         $('#customer').select2();
                     },
                     error: function(xhr) {
+                        erroralert(xhr);
                     }
                 });
             }
-
             function clearFields(){
                 $('#capability').val('').trigger('change');
                 $('#capability').parent().hide();
@@ -202,15 +203,11 @@
                 $('#accuracy').val(null).parent().hide();
                 $('#quantity').val(null).parent().hide();
                 $('#add-row').parent().hide();
-
             }
-
-
             $(function () {
                 $('#customers_list').select2();
                 $("#capability").select2();
                 $("#unit").select2();
-
                 $('#capability').on('change', function () {
                     $('#unit').parent().fadeIn(500);
                 });
@@ -229,8 +226,6 @@
                         $('#serial').focus();
                     },100);
                 });
-
-
                 $('#parameter').on('change', function () {
                     var parameter = $(this).val();
                     if (parameter) {
@@ -305,18 +300,12 @@
                         $('#customer-tr').show();
                     }
                 });
-
-                $("#add_form").on('submit', (function (e) {
-                    e.preventDefault();
-                    var next = {'type': 'reload'};
-                    cstore(this, "{{url('w.online.customer.store')}}", next);
-                }));
                 $(".left, .right").on('click', function () {
                     var inputField = $("#quantity");
                     var currentQty = parseInt(inputField.val());
                     if ($(this).hasClass('left')) { if (currentQty > 1) { inputField.val(currentQty - 1); } } else { inputField.val(currentQty >= 1 ? currentQty + 1 : 1); }
                 });
-                $(".submit-rfq").on('click', (function (e) {
+                $("#submit-btn").on('click', (function (e) {
                     e.preventDefault();
                     if($('#customer').val()){
                         var data={'data':formdata,'customer':$('#customer').val(),_token:'{{csrf_token()}}'};
@@ -324,7 +313,7 @@
                         var previous = $(button).html();
                         button.attr('disabled', 'disabled').html('Processing <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
                         $.ajax({
-                            url: url,
+                            url: 'https://aimslims.com/api/online-rfq-store',
                             type: "POST",
                             data: data ,
                             dataType:'JSON',
@@ -350,7 +339,6 @@
 
                 }));
             });
-
         </script>
     @endpush
     <style>

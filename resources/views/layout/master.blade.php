@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="{{url('assets/css/templatemo-scholar.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/owl.css')}}" />
     <link rel="stylesheet" href="{{url('assets/css/animate.css')}}" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="{{url('assets/js/swiper-bundle.min.css')}}" />
 </head>
 <body>
 <div id="js-preloader" class="js-preloader">
