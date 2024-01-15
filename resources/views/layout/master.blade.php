@@ -35,6 +35,7 @@
 <script src="{{url('assets/js/owl-carousel.js')}}"></script>
 <script src="{{url('assets/js/counter.js')}}"></script>
 <script src="{{url('assets/js/custom.js')}}"></script>
+<script type="text/javascript" src="{{url('assets/js/sweetalert.min.js')}}"></script>
 
 <script>
     $(function (){
@@ -44,6 +45,18 @@
             $(this).find('.fa-angle-down').toggleClass('rotate-up');
         })
     });
+    function erroralert(xhr) {
+        if (typeof  xhr.responseJSON.errors === 'object') {
+            var error = '';
+            $.each(xhr.responseJSON.errors, function (key, item) {
+                error += item;
+            });
+            swal("Failed", error, "error");
+        } else {
+            console.log( xhr);
+            swal("Failed", xhr.responseJSON.message, "error");
+        }
+    }
 </script>
 
 @stack('scripts')

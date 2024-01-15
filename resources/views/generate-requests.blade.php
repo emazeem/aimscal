@@ -29,6 +29,7 @@
                         <div class="form-group">
                             <select class="select-2-parameter form-control" id="parameter" name="parameter"></select>
                         </div>
+
                         <div class="form-group listed-capability" style="display: none">
                             <label for="capability"  class="d-none">Capabilities list</label>
                             <select class="form-control select-2-capability" style="width: 100%;" id="capability" name="capability"><option selected disabled>-- Select Capability</option></select>
@@ -110,13 +111,19 @@
                         <tfoot>
                         <tr id="not-available">
                             <td colspan="100%" class="text-center">
-                                <i>No data available</i>
+                                <i>No RFQ items added.</i>
                             </td>
                         </tr>
                         </tfoot>
                     </table>
-                    <div class="col-md-12 text-right text-end mt-2">
-                        <button class="btn bg-c-primary btn-p-m px-3 submit-rfq" data-type="s" style="width: auto"><i class="fa fa-save"></i> Submit RFQ</button>
+
+                    <div class="col-md-12 d-flex justify-content-end" >
+                        <div class="form-group w-25 mt-0">
+                            <select class="select-2-customer form-control" id="customer" name="customer"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2 text-end" >
+                        <button class="btn btn-success rounded-0 border-0 bg-c-primary btn-p-m px-3 submit-rfq "  id="submit-btn"><i class="fa fa-save"></i> Submit RFQ</button>
                     </div>
                 </div>
 
@@ -128,6 +135,7 @@
         <script src="{{url('vendor/select2.full.min.js')}}"></script>
         <script>
             getParameters();
+            getCustomers();
             window.addEventListener('beforeunload', function (event) {
                 const itemsTable = $('.items-table>tbody>tr');
                 if (itemsTable.length > 0) {
@@ -158,6 +166,27 @@
                     }
                 });
             }
+            function getCustomers(){
+                $.ajax({
+                    url: 'https://aimslims.com/api/customers-list',
+                    type: "POST",
+                    dataType:'JSON',
+                    beforeSend: function () {
+                        $('#customer-tr').hide();
+                    },
+                    success: function(response) {
+                        $('#customer-tr').show();
+                        $('#customer').append('<option selected disabled>-- Select a Customer</option>');
+                        $.each(response.data,function (index,param){
+                            $('#customer').append('<option value="'+param.id+'">'+param.reg_name+'</option>');
+                        });
+                        $('#customer').select2();
+                    },
+                    error: function(xhr) {
+                    }
+                });
+            }
+
             function clearFields(){
                 $('#capability').val('').trigger('change');
                 $('#capability').parent().hide();
@@ -173,7 +202,9 @@
                 $('#accuracy').val(null).parent().hide();
                 $('#quantity').val(null).parent().hide();
                 $('#add-row').parent().hide();
+
             }
+
 
             $(function () {
                 $('#customers_list').select2();
@@ -269,6 +300,9 @@
                     });
                     if ($('.items-table>tbody>tr').length === 0) {
                         $('#not-available').show();
+                        $('#customer-tr').hide();
+                    }else{
+                        $('#customer-tr').show();
                     }
                 });
 
@@ -284,46 +318,37 @@
                 });
                 $(".submit-rfq").on('click', (function (e) {
                     e.preventDefault();
-                    var data={'data':formdata,'customer':'{{1}}',_token:'{{csrf_token()}}'};
-                    var button = $(this);
-                    var previous = $(button).html();
-                    button.attr('disabled', 'disabled').html('Processing <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: data ,
-                        dataType:'JSON',
-                        beforeSend: function () {
-                            $('.loader-line').fadeIn();
-                        },
-                        success: function(data) {
-                            $('.loader-line').hide();
-                            button.attr('disabled', null).html(previous);
-                            swal('success', data.success, 'success').then(function () {
-                                location.reload();
-                            });
-                        },
-                        error: function(xhr) {
-                            $('.loader-line').hide();
-                            button.attr('disabled', null).html(previous);
-                            erroralert(xhr);
-                        }
-                    });
+                    if($('#customer').val()){
+                        var data={'data':formdata,'customer':$('#customer').val(),_token:'{{csrf_token()}}'};
+                        var button = $(this);
+                        var previous = $(button).html();
+                        button.attr('disabled', 'disabled').html('Processing <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+                        $.ajax({
+                            url: url,
+                            type: "POST",
+                            data: data ,
+                            dataType:'JSON',
+                            beforeSend: function () {
+                                $('.loader-line').fadeIn();
+                            },
+                            success: function(data) {
+                                $('.loader-line').hide();
+                                button.attr('disabled', null).html(previous);
+                                swal('success', data.success, 'success').then(function () {
+                                    location.reload();
+                                });
+                            },
+                            error: function(xhr) {
+                                $('.loader-line').hide();
+                                button.attr('disabled', null).html(previous);
+                                erroralert(xhr);
+                            }
+                        });
+                    }else{
+                        swal("Failed", 'Please select customer name', "error");
+                    }
+
                 }));
-
-                $('.titleWrapper').click(function(){
-                    var toggle = $(this).next('div#descwrapper');
-                    $(toggle).slideToggle("slow");
-                });
-                $('.inactive').click(function(){
-                    $(this).toggleClass('inactive active');
-                });
-                get_time();
-
-                window.setInterval(function(){
-                    get_time();
-                }, 10*1000);
-
             });
 
         </script>
