@@ -1,16 +1,9 @@
-<?php
-$files = glob('../public/gallery/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-$gallery=[];
-foreach ($files as $file){
-    $gallery[]='/gallery/'.$file;
-}
-?>
 <div class="gallery-wrapper">
     <div class="content ">
         <div class="gallery full">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <?php  foreach($gallery as $image){ ?>
+                    <?php  foreach(glob('public/gallery/*.{jpg,jpeg,png,gif}', GLOB_BRACE) as $image){ ?>
                         <div class="swiper-slide">
                             <div class="image">
                                 <img src="<?php echo $image ?>" alt="" />
@@ -42,7 +35,7 @@ foreach ($files as $file){
         <div class="gallery thumb">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <?php  foreach($gallery as $image){ ?>
+                    <?php  foreach(glob('public/gallery/*.{jpg,jpeg,png,gif}', GLOB_BRACE) as $image){ ?>
                         <div class="swiper-slide">
                             <div class="image">
                                 <img src="<?php echo $image ?>" alt="" />

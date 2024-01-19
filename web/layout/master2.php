@@ -1,14 +1,11 @@
 <?php include('layout/footer.php') ?>
-
-
-<script src="../public/vendor/jquery/jquery.min.js"></script>
-<script src="../public/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../public/assets/js/isotope.min.js"></script>
-<script src="../public/assets/js/owl-carousel.js"></script>
-<script src="../public/assets/js/counter.js"></script>
-<script src="../public/assets/js/custom.js"></script>
-<script type="text/javascript" src="../public/assets/js/sweetalert.min.js"></script>
-
+<script src="public/vendor/jquery/jquery.min.js"></script>
+<script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="public/assets/js/isotope.min.js"></script>
+<script src="public/assets/js/owl-carousel.js"></script>
+<script src="public/assets/js/counter.js"></script>
+<script src="public/assets/js/custom.js"></script>
+<script type="text/javascript" src="public/assets/js/sweetalert.min.js"></script>
 <script>
     $(function (){
         $(document).on('click','#servicesDropdown',function (){
