@@ -2,5 +2,5 @@
 @section('content')
     <div class="main-banner" id="top">
     </div>
-    @include('components.team')
+    @include('components.team-details')
 @endsection
