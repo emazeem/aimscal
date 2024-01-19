@@ -26,6 +26,17 @@ class HomeController extends Controller
         if ($request->type=='calibration-services'){
             return view('services.calibration');
         }
+        if ($request->type=='metrology-consultancy-training'){
+            return view('services.metrology-consultancy');
+        }
+        if ($request->type=='qms-consultancy'){
+            return view('services.qms-consultancy');
+        }
+        if ($request->type=='electrical-appliance-safety-testing-services'){
+            return view('services.e-and-i');
+        }
+
+
         abort('404');
     }
 
