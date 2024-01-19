@@ -83,7 +83,10 @@
                         </div>
                         <div class="col-12 mt-2 " style="display: none">
                             <button id="clear-btn" data-type="v" class="clear_btn btn btn-light float-start"> <i class="fa fa-eraser"></i> Clear</button>
-                            <button id="add-row" data-type="v" class="submit_rfq_btn btn btn-success float-end"> <i class="fa fa-plus-square"></i> Add Row</button>
+                            <button id="add-row" class="submit_rfq_btn btn bg-c-primary float-end">
+                                <span id="add-row-text"><i class="fa fa-plus-square"></i> Add Row</span>
+                                <span id="add-row-loading" style="display: none"><i class="fa fa-spinner fa fa-spin"></i> Processing</span>
+                            </button>
                         </div>
                     </div>
                     <select class="form-control d-none" id="location" name="location"><option selected disabled>-- Choose location</option><option value="lab" selected>Lab</option><option value="site">Site</option></select>
@@ -118,12 +121,18 @@
                     </table>
 
                     <div class="col-md-12 d-flex justify-content-end" >
-                        <div class="form-group w-25 mt-0">
+                        <div class="form-group w-25 mt-0" id="customer-loader">
+                            <label class="bg-c-primary btn btn-block w-100"><b>Loading Customers</b> <i class="fa fa-spin fa-spinner" ></i> </label>
+                        </div>
+                        <div class="form-group w-25 mt-0 customer-div">
                             <select class="select-2-customer form-control" id="customer" name="customer"></select>
                         </div>
                     </div>
                     <div class="col-md-12 mt-2 text-end" >
-                        <button class="btn btn-success rounded-0 border-0 bg-c-primary btn-p-m px-3 submit-rfq "  id="submit-btn"><i class="fa fa-save"></i> Submit RFQ</button>
+                        <button class="btn btn-success rounded-0 border-0 bg-c-primary btn-p-m px-3 submit-rfq "  id="submit-btn">
+                            <span id="rfq-submit-text"><i class="fa fa-save"></i> Submit RFQ</span>
+                            <span id="rfq-submit-processing" style="display:none;"><i class="fa fa-spinner fa-spin"></i> Processing</span>
+                        </button>
                     </div>
                 </div>
 
@@ -173,14 +182,16 @@
                     type: "POST",
                     dataType:'JSON',
                     beforeSend: function () {
-                        $('#customer-tr').hide();
+                        $('#customer-loader').show();
+                        $('.customer-div').hide();
                     },
                     success: function(response) {
-                        $('#customer-tr').show();
+                        $('#customer-loader').hide();
                         $('#customer').append('<option selected disabled>-- Select a Customer</option>');
                         $.each(response.data,function (index,param){
                             $('#customer').append('<option value="'+param.id+'">'+param.reg_name+'</option>');
                         });
+                        $('.customer-div').show();
                         $('#customer').select2();
                     },
                     error: function(xhr) {
@@ -269,18 +280,26 @@
                         contentType: false,
                         dataType:'JSON',
                         beforeSend: function () {
-                            $('.loader-line').fadeIn();
+                            $('#add-row-text').hide();
+                            $('#add-row-loading').show();
                         },
                         success: function(data) {
-                            $('.loader-line').hide();
+
+
                             $('#not-available').hide();
                             $('.items-table').append('<tr id="data-'+data.id+'"><td> <i class="fa fa-times-circle text-danger tbl-remove-item" data-id="'+data.id+'"></i> '+data.capability_name+'</td> <td>'+data.parameter_name+'</td> <td>'+data.unit_name+'</td> <td>'+data.make+'</td> <td>'+data.model+'</td> <td>'+data.serial+'</td> <td>'+data.eq_id+'</td> <td>'+data.min_range+','+data.max_range+'</td> <td>'+data.resolution+'</td> <td>'+data.accuracy+'</td> <td>'+data.location+'</td> <td>'+data.quantity+'</td> </tr>');
                             formdata.push(data);
                             getParameters();
                             clearFields();
+
+
+                            $('#add-row-text').show();
+                            $('#add-row-loading').hide();
                         },
                         error: function(xhr) {
-                            $('.loader-line').hide();
+                            $('#add-row-text').show();
+                            $('#add-row-loading').hide();
+                            erroralert(xhr);
                         }
                     });
                 }));
@@ -318,17 +337,24 @@
                             data: data ,
                             dataType:'JSON',
                             beforeSend: function () {
-                                $('.loader-line').fadeIn();
+                                $('#rfq-submit-text').hide();
+                                $('#rfq-submit-processing').show();
                             },
                             success: function(data) {
-                                $('.loader-line').hide();
+
+                                $('#rfq-submit-text').show();
+                                $('#rfq-submit-processing').hide();
+
                                 button.attr('disabled', null).html(previous);
                                 swal('success', data.success, 'success').then(function () {
+                                    $('.items-table>tbody>tr').remove();
                                     location.reload();
                                 });
                             },
                             error: function(xhr) {
-                                $('.loader-line').hide();
+                                $('#rfq-submit-text').show();
+                                $('#rfq-submit-processing').hide();
+
                                 button.attr('disabled', null).html(previous);
                                 erroralert(xhr);
                             }

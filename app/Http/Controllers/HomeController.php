@@ -50,7 +50,7 @@ class HomeController extends Controller
         ]);
         $subject=$request->subject;
         $message=$request->message;
-        $to = 'emazeem07@gmail.com';
+        $to = 'info@aimscal.com';
         $from=$request->email;
         Mail::html($message, function ($message) use ($subject, $to, $from) {
             $message->subject($subject)->to($to)->from($from);

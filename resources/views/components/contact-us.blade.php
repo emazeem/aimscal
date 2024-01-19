@@ -74,7 +74,9 @@
                     processData:false,
                     success: function(data) {
                         button.attr('disabled', null).html(previous);
-                        swal('success',data.success,'success').then((value) => {});
+                        swal('success',data.success,'success').then((value) => {
+                            location.reload();
+                        });
                     },
                     error: function(xhr) {
                         button.attr('disabled', null).html(previous);
