@@ -65,7 +65,7 @@
                 var previous = $(button).html();
                 button.attr('disabled', 'disabled').html('Processing... Please wait <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
                 $.ajax({
-                    url: "{{route('contact.send.mail')}}",
+                    url: "https://aimslims.com/api/contact-us-email",
                     type: "POST",
                     data:  new FormData(this),
                     contentType: false,
