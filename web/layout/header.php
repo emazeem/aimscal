@@ -33,6 +33,7 @@ $services = [
                         <li class="scroll-to-section"><a class="" href="our_team.php">Team</a></li>
                         <li class="scroll-to-section"><a class="" href="about_us.php">About Us</a></li>
                         <li class="scroll-to-section"><a class="" href='contact_us.php'>Contact Us</a></li>
+                        <li class="scroll-to-section"><a class="" href='equipmental_rental.php'>Equipment Rental</a></li>
                         <li class="scroll-to-section main-button"><a class="" href="generate-requests.php">Request a Quote</a></li>
                     </ul>
                     <a class="menu-trigger">
