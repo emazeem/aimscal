@@ -5,7 +5,7 @@ $teams= [
     array('name'=>'Riaz Ahmed','image'=>'TM.jpeg','designation'=>'Technical Manager'),
 ];
 ?>
-<div class="team section" id="team">
+<div class="section" id="team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
